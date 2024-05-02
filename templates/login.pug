@@ -1,0 +1,36 @@
+doctype html 
+html(lang="en")
+  head 
+    meta(charset="UTF-8")
+    title Login
+    link(rel="stylesheet", type="text/css", href="/css/main.css")
+    link(rel="stylesheet", type="text/css", href="/css/main.dark.css")
+  
+  body.centered
+    button#theme-toggle.top-links Dark Mode
+    .sidenav
+      a(href="/main") Home
+      a(href="/post") Post
+      a(href="/admin/profile") Profile
+      if username === undefined
+        a(href='login') Login
+      else
+        a(href='login') #{username}  
+    h1.stroke-text Log in
+    
+    .loginbox
+      .insidebox
+        form(action="/login" method="post")
+          label(for="username") Username:
+          textarea#username(name="username" rows="1" cols="25" placeholder="Username" required="")
+          
+          br
+          label(for="password") Password:&nbsp;
+          textarea#password(name="password" rows="1" cols="25" placeholder="Password" required="")
+          
+          br
+          input(type="submit" value="Submit")
+    
+    script(src="/js/main.js")
+    script(src="/js/table.js")
+    script(src="/js/profile.js")

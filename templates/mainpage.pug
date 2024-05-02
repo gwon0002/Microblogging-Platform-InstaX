@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Home
+    link(rel="stylesheet", type="text/css", href="/css/main.css")
+    link(rel="stylesheet", type="text/css", href="/css/main.dark.css")
+    script(src="js/profile.js")
+    
+  body.centered
+    button#theme-toggle.top-links Dark Mode
+    .sidenav
+      a(href="/main") Home
+      a(href="/post") Post
+      a(href="/admin/profile") Profile
+      if username === undefined
+        a(href='login') Login
+      else
+        a(href='login') #{username}  
+      
+    .post-container
+      header
+       h1.stroke-text InstaX
+      each contact, index in contacts.reverse()
+        .posteach
+          .post-header
+            h3= contact.username ? contact.username : '' 
+            span.post-date
+              | #{contact.date ? contact.date : ''}
+              | #{contact.time ? contact.time : ''}
+            button.delete-button(data-index=index) Delete
+            button(data-index=index, class='edit-button') Edit
+            button.like-button(data-index=index) Like
+            span.like-count(id=`like-count-${index}`)= contact.likes ? `${contact.likes} Likes` : '0 Likes'
+          .post-content
+            p.post-text= contact.content ? contact.content : ''
+            textarea#textAreaId(data-index=index, style="display: none;")
+            button.complete-button(data-index=index, style="display: none;") Update
+
+      if !contacts || contacts.length === 0
+        .post-placeholder Share Your First Post!
+    
+    .pagination-container
+      ul.pagination
+        li.page-item
+          a.page-link(href="#") &laquo;
+        li.page-item
+          a.page-link(href="#") 1
+        li.page-item
+          a.page-link(href="#") 2
+        li.page-item
+          a.page-link(href="#") 3
+        li.page-item
+          a.page-link(href="#") 4
+        li.page-item
+          a.page-link(href="#") &raquo;
+
+    script(src="/js/main.js")
+    script(src="/js/table.js")
+    script(src="/js/profile.js")

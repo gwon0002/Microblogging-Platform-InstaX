@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Profile
+    link(rel="stylesheet", type="text/css", href="/css/main.css")
+    link(rel="stylesheet", type="text/css", href="/css/main.dark.css")
+    script(src="js/profile.js")
+    
+  body(class="centered")
+    button#theme-toggle.top-links Dark Mode
+    .sidenav
+      a(href="/main") Home
+      a(href="/post") Post
+      a(href="/admin/profile") Profile
+      if username === undefined
+        a(href='/login') Login
+      else
+        a(href='/login') #{username}   
+
+    .post-container
+      .header
+        h1.stroke-text My Profile
+        .user-label Username: #{username}
+        .picture-box
+          .user-profile
+            img#profile-picture.profile-image(src="/uploads/default.jpg")
+          label(for="profile-pic" class="custom-file-upload") Upload Picture
+          form(action="/uploadProfilePic", method="post", enctype="multipart/form-data")
+            input(type="file", name="profilePic", id="profile-pic", accept="image/*")
+
+      table.contact-table
+        tr
+          th Posted Date
+          th Content
+          th Likes
+          th Action
+        each contact, index in contacts
+          tr
+            td= contact.date ? `${contact.date} ${contact.time}` : '' 
+            td= contact.content ? contact.content : ''
+            td
+              span.like-count(id=`like-count-${index}`)= contact.likes ? `${contact.likes} Likes` : '0 Likes'
+            td
+              button.delete-button(data-index="#{loop.index - 1}") Delete
+              button.edit-button(data-index="#{index}") Edit
+              button.like-button(data-index=index) Like
+
+      if !contacts || contacts.length === 0
+        .post-placeholder No Post Found
+
+      script(src="/js/main.js")
+      script(src="/js/profile.js")
+      script(src="/js/table.js")
+      script.
+        const profilePicInput = document.getElementById('profile-pic');
+        const profilePicture = document.getElementById('profile-picture');
+
+        profilePicInput.addEventListener('change', function() {
+          const file = this.files[0];
+          if(file) 
+          {
+            const reader = new FileReader();
+            reader.onload = function(e) 
+            {
+              profilePicture.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        });

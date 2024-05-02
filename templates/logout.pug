@@ -1,0 +1,28 @@
+doctype html 
+html(lang="en")
+  head 
+    meta(charset="UTF-8")
+    title Logout
+    link(rel="stylesheet", type="text/css", href="/css/main.css")
+    link(rel="stylesheet", type="text/css", href="/css/main.dark.css")
+  body.centered
+    button#theme-toggle.top-links Dark Mode
+    .sidenav
+      a(href="/main") Home
+      a(href="/post") Post
+      a(href="/admin/profile") Profile
+      if username === undefined
+        a(href='login') Login
+      else
+        a(href='login') #{username} 
+    header
+        h2.underline  Username: #{username}
+
+    .loginbox
+      .insidebox
+        form(action="/logout" method="post") Log out:      
+          input(type="submit" value="Logout")
+
+        script(src="/js/main.js")
+        script(src="/js/table.js")
+        script(src="/js/profile.js")

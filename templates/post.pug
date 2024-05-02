@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Post
+    link(rel="stylesheet", type="text/css", href="/css/main.css")
+    link(rel="stylesheet", type="text/css", href="/css/main.dark.css")
+    script(src="/js/profile.js")
+  body.centered
+    button#theme-toggle.top-links Dark Mode
+    .sidenav
+      a(href="/main") Home
+      a(href="/post") Post
+      a(href="/admin/profile") Profile
+      if username === undefined
+        a(href='login') Login
+      else
+        a(href='login') #{username}  
+    .post-container
+      header
+        h1.stroke-text Post
+
+      .info-box
+        form#content-form(action="/post", method="POST")
+          label(for="username", style="display: block;") Username:
+          input(type="text", id="username", name="username", required)
+          label(for="content", style="display: block;") Maximum 50 characters:
+          label(for="content", style="display: block; margin-bottom: 5px;")
+          textarea(id="content", name="content", required maxlength="50", rows="3", cols="40")
+          br
+
+          button.post-button(type="submit") Post
+
+        #confirmation-message
+
+    script(src="/js/main.js")
+    script(src="/js/profile.js")
+    script(src="/js/table.js")

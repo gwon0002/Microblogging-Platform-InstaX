@@ -1,0 +1,179 @@
+/* Set the background color and font styles for the body */
+body.dark-mode 
+{
+    background-color: gray;
+    color: white; /* Set default text color to white */
+}
+
+body.dark-mode .posteach
+{
+    color: black;
+    border: 3px solid black;
+}
+
+body.dark-mode .delete-button
+{
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .edit-button
+{
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .like-button
+{
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .post-button 
+{
+    background-color: gray;
+    color: white;
+}
+
+/* Set the background color of the navigation bar */
+body.dark-mode .sidenav, .sidenav button 
+{
+    background-color: black;
+}
+
+body.dark-mode div.insidebox
+{                                       /* make my hobby part and my name as border and resize it. */
+    background-color:silver;
+    border: 3px solid black;
+}
+
+/* Style link hover effect */
+body.dark-mode .sidenav a:hover 
+{
+    background-color: white; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+body.dark-mode #theme-toggle 
+{
+    text-decoration: none;
+    color: white;
+    padding: 16px 16px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px;
+    background-color: black;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+body.dark-mode #theme-toggle:hover
+{
+    background-color: white; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+/* Style the info box */
+body.dark-mode .info-box 
+{
+    background-color: black; /* Set background color */
+    border: 3px solid silver; /* Add border with blue color */
+}
+
+/* Style individual reviews */
+body.dark-mode .review 
+{
+    background-color: black; /* Set background color to match webpage */
+    border: 3px solid silver; /* Add border with blue color */
+}
+/* Style the review body */
+body.dark-mode .review-body 
+{
+    color: white; /* Set text color to black */
+}
+
+/* Style the reviewer name */
+body.dark-mode .reviewer-name 
+{
+    color: white; /* Set text color to black */
+}
+
+/* Style the video container */
+body.dark-mode .video-container 
+{
+    background-color: black; /* Set background color */
+    border: 3px solid silver; /* Add border with blue color */
+}
+
+/* Style the contact table */
+body.dark-mode .contact-table 
+{
+    border: 2px solid black; /* Set border color to black */
+}
+
+/* Style table headers and cells */
+body.dark-mode .contact-table th, .contact-table td 
+{
+    border: 1px solid black; /* Set border color to black */
+    color: black;
+}
+
+/* Style table headers */
+body.dark-mode .contact-table th 
+{
+    background-color: white; /* Set background color */
+    color: black;
+}
+
+/* Style even rows of the table */
+body.dark-mode .contact-table tr:nth-child
+{
+    background-color: white; /* Set background color */
+}
+
+/* Style odd rows of the table */
+body.dark-mode .contact-table tr:nth-child(odd) 
+{
+    background-color: white; /* Set background color */
+}
+
+/* Style text with a stroke effect */
+body.dark-mode .stroke-text 
+{
+    -webkit-text-stroke: 3px white; /* Add stroke effect */
+    -webkit-text-fill-color: transparent; /* Make text fill transparent */
+}
+
+/* Style the highlighted text */
+body.dark-mode .highlight 
+{
+    color: purple; /* Set text color to blue */
+}
+
+/* Style the purple text */
+body.dark-mode .purple-text 
+{
+    color: blue; /* Set text color to purple */
+}
+
+/* Style the green text */
+body.dark-mode .green-text 
+{
+    color: green; /* Set text color to purple */
+}
+
+body.dark-mode ul.pagination
+{
+    border: 3px solid black;
+}
+
+body.dark-mode .custom-file-upload 
+{
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .picture-box
+{
+    border: 3px solid black; /* Add border with blue color */
+    background-color: lightgrey; /* Set background color */
+}
